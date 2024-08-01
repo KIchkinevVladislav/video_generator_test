@@ -17,3 +17,7 @@ body {
     text-decoration: none;
     color: white;
 }
+
+.custom-paragraph {
+    font-size: 1.75rem; /* Пример увеличенного размера для абзаца */
+}
