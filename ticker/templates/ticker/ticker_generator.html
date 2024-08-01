@@ -1,0 +1,25 @@
+{% extends 'ticker/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mt-5">Создание видео</h1>
+            <p class="text-left">
+                Введите текст для бегущей строки и создайте видео!
+                В настоящее время максимум 64 символа...
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" id="start-purchase-btn" class="btn btn-lg btn-primary mt-3">Создать видео</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

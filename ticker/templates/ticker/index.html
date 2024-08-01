@@ -1,0 +1,30 @@
+{% extends 'ticker/base.html' %}
+{% load static %}
+
+{% block css %} 
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %} 
+<section style="font-size: 30px;">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mt-5 text-center">Генератор видео</h1>
+                <p class="text-center">
+                    Создайте видео бегущей строки с Вашим текстом! 
+                    Что это будет? Поздравление? Может быть шутка? 
+                    Или признание в любви?
+                </p>
+                <div class="text-center">
+                    <button id="start-purchase-btn" type="button" class="btn btn-lg btn-primary">
+                        <a id="start-purchase-link" href="{% url 'ticker:ticker_generator' %}" class="text-white text-decoration-none">
+                            Создать
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
