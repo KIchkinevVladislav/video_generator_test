@@ -6,12 +6,12 @@ class TickerText(models.Model):
     Class describing the fields of the "TickerText" object 
     in the database
     """    
-    text = models.CharField(max_length=256, verbose_name='Текст в бегущей строке')
+    text = models.CharField(max_length=64, verbose_name='Текст в бегущей строке')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания видео')
 
     def __str__(self) -> str :
         return f'Текст в бегущей строке: {self.text}'
 
     class Meta():
-        verbose_name = 'Тект в бегущей строке'
-        verbose_name_plural = 'Тексты записанные в бегущей строке'
+        verbose_name = 'Текст в бегущей строке'
+        verbose_name_plural = 'Тексты записанные в бегущие строки'
