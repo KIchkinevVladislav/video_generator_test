@@ -24,7 +24,13 @@ class TickerTexForm(forms.ModelForm):
         fields = ['text']
         widgets = {
             'text': forms.TextInput(attrs={
-                'maxlength': 64,
+                'maxlength': 32,
                 'placeholder': 'Введите текст'
             })
         }
+
+    def clean_text(self):
+        text = self.cleaned_data.get('text')
+        if len(text) > 32:
+            raise forms.ValidationError('Длина текста не может превышать 32 символа!')
+        return text       

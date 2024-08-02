@@ -15,7 +15,7 @@ class IndexView(TitleMixin, TemplateView):
 
 class TickerView(TitleMixin, TemplateView):
     template_name = 'ticker/ticker_generator.html'
-    title = 'Создание видео'
+    title = 'Create video'
 
     def get(self, request):
         form = TickerTexForm()
