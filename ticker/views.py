@@ -25,8 +25,12 @@ class TickerView(TitleMixin, TemplateView):
         form = TickerTexForm(request.POST)
         if form.is_valid():
             ticker_text = form.save()
+            text_color = form.cleaned_data['text_color']
+            frame_color = form.cleaned_data['frame_color']
+            video_size = int(form.cleaned_data['video_size'])
             filename = 'new_video_ticker.mp4'
-            video_path = create_video_ticker(ticker_text.text, filename)
+            
+            video_path = create_video_ticker(ticker_text.text, filename, text_color, frame_color, video_size)
             
             with open(video_path, 'rb') as video_file:
                 response = HttpResponse(video_file.read(), content_type='video/mp4')
