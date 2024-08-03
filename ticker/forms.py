@@ -10,8 +10,8 @@ class TickerTexForm(forms.ModelForm):
         ('random', 'Случайный')
     ]
     COLOR_CHOICES_FRAME = [
-        ('white', 'Белый'),
         ('black', 'Черный'),
+        ('white', 'Белый'),
     ]    
     SIZE_CHOICES = [(i, f'{i}px') for i in range(100, 721, 20)]
 
