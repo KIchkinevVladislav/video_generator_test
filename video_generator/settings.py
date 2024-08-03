@@ -9,11 +9,10 @@ env = environ.Env(
     SECRET_KEY=(str, 'django-insecure-tp*coq!vs8vuevs=+*#9+zix1ggd&_ngsvc!4m79wb^ni#y*ke'),
     DOMAIN_NAME=(str, 'http://127.0.0.1:8000'),
 
-# TODO: поменять для докера на нелокальные
     DATABASE_NAME=(str, 'postgres'),
     DATABASE_USER=(str, 'postgres'),
     DATABASE_PASSWORD=(str, 'postgres'),
-    DATABASE_HOST=(str, 'localhost'),
+    DATABASE_HOST=(str, 'db'),
     DATABASE_PORT=(str, '5432'),
 )
 
@@ -30,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 DOMAIN_NAME = env('DOMAIN_NAME')
 
@@ -76,7 +75,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'video_generator.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

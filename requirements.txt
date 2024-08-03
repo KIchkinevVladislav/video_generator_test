@@ -5,4 +5,4 @@ django-environ==0.11.2
 psycopg2-binary==2.9.9
 
 numpy==2.0.1
-opencv-python==4.10.0.84
+opencv-python-headless
